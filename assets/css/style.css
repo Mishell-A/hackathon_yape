@@ -52,7 +52,7 @@
 }
 
 .principal img {
-  height: 180px;
+  height: 160px;
 }
 
 .informativo {
@@ -63,7 +63,7 @@
   height: 12%;
 }
 .informativo img {
-  width: 70px;
+  width: 60px;
 }
 
 .informativo p {
@@ -87,6 +87,37 @@
   margin-top: 30px;
 }
 
-.informativo .text {
-  margin-top: 8px;
+.info-seguridad .text-security,
+.carousel-reels {
+  padding: 27px 30px;
+  color: #2c2044;
+}
+
+.info-seguridad p {
+  color: #69607b;
+  font-size: 12px;
+}
+.info-seguridad img {
+  width: 460px;
+  max-width: 100%;
+  height: auto;
+  padding-right: 30px;
+}
+
+.info-seguridad a {
+  background-color: #10cbb4;
+  color: white;
+  font-size: 12px;
+}
+
+.carousel-reels .description-reel {
+  color: #69607b;
+  font-size: 12px;
+}
+
+.carousel-reels h3 {
+  color: #2c2044;
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
