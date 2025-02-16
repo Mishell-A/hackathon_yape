@@ -122,10 +122,13 @@
   margin-bottom: 20px;
 }
 
-#carouselExampleCaptions,
-iframe {
+#carouselExampleCaptions {
   width: 70%;
   height: 400px;
+}
+
+iframe {
+  height: 390px;
 }
 
 footer {
