@@ -1,6 +1,88 @@
 * {
-  font-family: "Passion One", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.roboto-serif {
+  font-family: "Roboto Serif", serif;
+  font-weight: 500;
+}
+
+.passion-one {
+  font-family: "Passion One", serif;
+}
+
+.btn-bloqueo {
+  background-color: #10cbb4;
+  color: white;
+  box-shadow: 2px 2px 2px 1px rgba(41, 40, 40, 0.2);
+  display: inline-block;
+  animation: pulse 4s ease-in-out infinite;
+  font-size: 12px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.principal {
+  background: linear-gradient(140deg, #4b0082 51%, #00a896 85%);
+  color: white;
+  padding: 26px 20px;
+  height: 410px;
+}
+
+.principal h2 {
+  font-size: 50px;
+}
+
+.principal p {
+  padding-top: 20px;
+  font-size: 12px;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+.principal img {
+  height: 180px;
+}
+
+.informativo {
+  padding: 27px 30px;
+}
+
+.informativo .yapito-runner {
+  height: 12%;
+}
+.informativo img {
+  width: 70px;
+}
+
+.informativo p {
+  font-size: 12px;
+  color: #39607b;
+  padding-top: 5px;
+}
+
+.informativo span {
+  display: block;
+  color: #742384;
+  font-weight: bold;
+}
+
+.informativo .title1 {
+  color: #742384;
+  display: inline;
+}
+
+.informativo .situaciones {
+  margin-top: 30px;
 }
