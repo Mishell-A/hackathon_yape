@@ -27,12 +27,13 @@
   </head>
   <body>
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-white py-3 d-flex justify-content-between"
+      class="navbar navbar-lg navbar-light bg-white py-3 d-flex justify-content-between"
     >
       <div class="container-fluid">
         <img
           src="./assets/img/logo-positive.svg"
           alt="logo-yape"
+          class="logo-yape"
           height="50px"
         />
         <a href="#" class="btn btn-teal mx-auto btn-bloqueo roboto-serif"
@@ -60,7 +61,7 @@
     <main>
       <div class="principal">
         <h2 class="passion-one">¿Tu cuenta Yape está en riesgo?</h2>
-        <div class="d-flex">
+        <div class="d-flex cont-principal">
           <p class="roboto-serif">
             Bloquéalo al toque, no te preocupes, es rápido y tu dinero estará
             seguro en segundos.
@@ -68,89 +69,118 @@
           <img src="./assets/img/yapito-alert.svg" alt="yapito-alert" />
         </div>
       </div>
+
       <div class="informativo roboto-serif">
-        <h3 class="passion-one">
+        <h3 class="passion-one text-center">
           En situaciones de riesgo, es crucial
           <span class="title1">actuar rápido</span>
         </h3>
 
-        <div class="d-flex flex-column gap-5 situaciones">
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/img/yapito-scared.svg"
-              alt="yapito-scared"
-              class="me-4"
-            />
-            <p class="m-0">
-              <span>Pérdida</span>
-              Bloquea tu cuenta rápidamente desde otro dispositivo para proteger
-              tu dinero.
-            </p>
-          </div>
-
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/img/yapito-runner.svg"
-              alt="yapito-runner"
-              class="me-4 yapito-runner"
-            />
-            <p class="m-0">
-              <span>Robo</span>
-              Bloquea tu cuenta al toque para evitar transacciones no
-              autorizadas.
-            </p>
-          </div>
-
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/img/yapito-angry.svg"
-              alt="yapito-angry"
-              class="me-4"
-            />
-            <p class="m-0">
-              <span>Transacciones o inicios de sesión desconocidos.</span>
-              Bloquea tu cuenta inmediatamente para prevenir fraudes.
-            </p>
+        <div class="container text-center">
+          <div class="row row-cols-1 row-cols-md-3 g-4 situaciones">
+            <div class="col">
+              <div class="card border-0 h-100">
+                <img
+                  src="./assets/img/yapito-scared.svg"
+                  alt="yapito-scared"
+                  class="mx-auto"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    <span>Pérdida</span>
+                    Bloquea tu cuenta rápidamente desde otro dispositivo para
+                    proteger tu dinero.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-0 h-100">
+                <img
+                  src="./assets/img/yapito-runner.svg"
+                  alt="yapito-runner"
+                  class="mx-auto yapito-runner"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    <span>Robo</span>
+                    Bloquea tu cuenta al toque para evitar transacciones no
+                    autorizadas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-0 h-100">
+                <img
+                  src="./assets/img/yapito-angry.svg"
+                  alt="yapito-angry"
+                  class="mx-auto"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    <span>Transacciones o inicios de sesión desconocidos.</span>
+                    Bloquea tu cuenta inmediatamente para prevenir fraudes.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="informativo roboto-serif">
-        <h3 class="passion-one">
+        <h3 class="passion-one text-center">
           Protege tu cuenta
           <span class="title1"> al máximo</span>
         </h3>
-        <div class="d-flex flex-column gap-5 situaciones">
-          <div class="d-flex align-items-start text">
-            <img
-              src="./assets/img/shield.svg"
-              alt="img-seguridad"
-              class="me-4"
-            />
-            <p class="m-0">
-              <span>Protección inmediata</span>Bloquea tu cuenta al instante.
-            </p>
-          </div>
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/img/padlock (1).svg"
-              alt="img-candado"
-              class="me-4"
-            />
-            <p class="m-0">
-              <span>Control total</span>Eres tú quien decide cuándo desbloquear
-              la cuenta.
-            </p>
-          </div>
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/img/star-002.svg"
-              alt="img-estrellas"
-              class="me-4"
-            />
-            <p class="m-0">
-              <span>Sin complicaciones</span>Proceso sin papeleo ni esperas,
-              todo desde cualquier dispositivo.
-            </p>
+
+        <div class="container text-center">
+          <div class="row row-cols-1 row-cols-md-3 g-4 situaciones">
+            <div class="col">
+              <div class="card border-0 h-100">
+                <img
+                  src="./assets/img/./shield.svg"
+                  alt="security"
+                  class="mx-auto img-es"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    <span>Protección inmediata</span>Bloquea tu cuenta al
+                    instante.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-0 h-100">
+                <img
+                  src="./assets/img/padlock (1).svg"
+                  alt="lock"
+                  class="mx-auto img-es"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    <span>Control total</span>Eres tú quien decide cuándo
+                    desbloquear la cuenta.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-0 h-100">
+                <img
+                  src="./assets/img/star-002.svg"
+                  alt="stars"
+                  class="mx-auto img-es"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    <span>Sin complicaciones</span>Proceso sin papeleo ni
+                    esperas, todo desde cualquier dispositivo.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

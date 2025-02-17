@@ -37,7 +37,13 @@
   background: linear-gradient(140deg, #4b0082 51%, #00a896 85%);
   color: white;
   padding: 26px 20px;
-  height: 410px;
+  height: 440px;
+}
+
+.cont-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .principal h2 {
@@ -46,13 +52,13 @@
 
 .principal p {
   padding-top: 20px;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 20px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .principal img {
-  height: 160px;
+  height: 190px;
 }
 
 .informativo {
@@ -185,4 +191,116 @@ footer {
   margin-top: 8px;
   margin: 0;
   padding: 20px;
+}
+.situaciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.situaciones .card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 1% 10%;
+    height: 90px;
+  }
+  .logo-yape {
+    height: 70px;
+  }
+  .btn-bloqueo {
+    font-size: 22px;
+    padding-top: 0;
+  }
+  .principal {
+    height: 490px;
+    margin-bottom: 2%;
+  }
+  .principal h2 {
+    font-size: 80px;
+    padding: 27px 30px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .principal .cont-principal {
+    display: flex;
+    justify-content: space-around;
+  }
+  .principal p {
+    padding-top: 20px;
+    font-size: 13px;
+    margin-top: 20px;
+    font-weight: 400;
+  }
+  .cont-principal {
+    padding: 0 5%;
+    gap: 200px;
+    margin-top: 0;
+  }
+
+  .cont-principal p {
+    font-size: 1.5rem;
+  }
+
+  .cont-principal img {
+    height: 300px;
+  }
+
+  .informativo img {
+    width: 150px;
+    height: 160px;
+  }
+  .informativo .img-es {
+    width: 110px;
+    height: 150px;
+  }
+
+  .informativo .yapito-runner {
+    height: 160px;
+  }
+
+  .situaciones p {
+    font-size: 17px;
+    max-width: 600px;
+    padding-top: 50px;
+  }
+
+  .info-seguridad h3,
+  .informativo > h3 {
+    font-size: 34px;
+  }
+
+  .yapito-angry {
+    margin-right: 5px;
+  }
+
+  .info-seguridad img {
+    width: 50%;
+    height: auto;
+  }
+  .info-seguridad p {
+    font-size: 17px;
+  }
+
+  .info-seguridad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 7%;
+  }
+  .info-seguridad a {
+    font-size: 15px;
+  }
+
+  .text-security {
+    gap: 3;
+  }
 }
