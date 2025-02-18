@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+body {
+  padding-top: 100px;
+}
 .roboto-serif {
   font-family: "Roboto Serif", serif;
   font-weight: 500;
@@ -11,6 +14,15 @@
 
 .passion-one {
   font-family: "Passion One", serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
 }
 
 .btn-bloqueo {
@@ -36,7 +48,7 @@
 .principal {
   background: linear-gradient(140deg, #4b0082 51%, #00a896 85%);
   color: white;
-  padding: 26px 20px;
+  padding: 20px 20px;
   height: 440px;
 }
 
@@ -215,6 +227,132 @@ footer {
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+}
+
+/* Estilos personalizados para el modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+}
+
+.modal-custom {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1060;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-image: url("../img/speed-line-002-2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+/* Overlay oscuro para mejorar la legibilidad del contenido */
+
+.modal-custom.show {
+  display: block;
+}
+
+.modal-overlay.show {
+  display: block;
+}
+
+.modal-content-wrapper {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.modal-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  object-fit: cover;
+  border-radius: 60px;
+}
+
+.tit-modal {
+  display: flex;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  margin-top: 30px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-action {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-register {
+  background-color: white;
+  color: #2c2044;
+  border: none;
+}
+
+.btn-register:active {
+  border: 2px solid black;
+  color: white;
+}
+
+.btn-register:hover {
+  background: linear-gradient(130deg, #4b0082 11%, #00a896 95%);
+  color: white;
+  font-weight: 500;
+  transform: translateY(-2px);
+}
+
+.btn-login {
+  background-color: white;
+  color: #2c2044;
+  border: none;
+}
+
+.btn-login:hover {
+  background: linear-gradient(130deg, #4b0082 11%, #00a896 95%);
+  color: white;
+  font-weight: 500;
+  transform: translateY(-2px);
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal-body {
+  padding: 20px 15px;
+}
+
+.btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: white;
+  opacity: 0.8;
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.btn-close:hover {
+  opacity: 1;
 }
 
 @media (min-width: 1200px) {
