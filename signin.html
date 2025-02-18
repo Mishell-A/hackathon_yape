@@ -36,35 +36,9 @@
           class="logo-yape"
           height="50px"
         />
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#menuLateral"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="offcanvas offcanvas-start bg-dark"
-          id="menuLateral"
-          tabindex="-1"
-        >
-          <div class="offcanvas-header" data-bs-theme="dark">
-            <h4 class="text-white offcanvas-title text info">Menú</h4>
-            <button
-              class="btn-close"
-              type="button"
-              aria-label="close"
-              data-bs-dismiss="offcanvas"
-            ></button>
-          </div>
-          <div class="offcanvas-body text-white">
-            <li>Y</li>
-            <li>A</li>
-            <li>P</li>
-            <li>E</li>
-          </div>
-        </div>
+        <a class="btn" href="./index.html">
+          <i class="bi bi-arrow-left fs-3"></i>
+        </a>
       </div>
     </nav>
     <div
@@ -75,46 +49,126 @@
           class="contenedor-img d-flex justify-content-center align-items-center"
         ></div>
         <div class="contenedor bg-white" id="sign-in">
-          <div class="sign-in">
-            <h1 class="mb-10 ms-3 text-center passion-one">Inicia sesión</h1>
-          </div>
           <form id="signin-form" class="roboto-serif">
-            <div class="mb-2 px-4">
-              <label for="signin-email" class="form-label">Correo</label>
-              <input
-                type="email"
-                class="form-control"
-                id="signin-email"
-                aria-describedby="emailHelp"
-                placeholder="correo@ejemplo.com"
-              />
-            </div>
-            <div class="mb-2 px-4">
-              <label for="signin-password" class="form-label">Contraseña</label>
-              <input
-                type="password"
-                class="form-control"
-                id="signin-password"
-                placeholder="Debe tener más de 6 caracteres"
-              />
-            </div>
-            <div class="d-flex justify-content-center mt-4 mb-4">
-              <button type="submit" class="btn-custom rounded-5 p-2">
-                Inicia sesión
-              </button>
-            </div>
+            <h1 class="mb-10 ms-3 text-center passion-one">Inicia sesión</h1>
+            <section class="sub-form mt-4">
+              <div class="mb-2 px-4">
+                <label for="signin-email" class="form-label roboto-serif"
+                  >Correo</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="signin-email"
+                  aria-describedby="emailHelp"
+                  placeholder="correo@ejemplo.com"
+                />
+              </div>
+              <div class="mb-2 px-4">
+                <label for="signin-password" class="form-label roboto-serif"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signin-password"
+                  placeholder="Ingresa tu contraseña"
+                />
+              </div>
+              <div class="d-flex justify-content-center mt-5 mb-5">
+                <button
+                  type="submit"
+                  class="btn-custom rounded-5 p-2 roboto-serif btn-login"
+                >
+                  Continuar
+                </button>
+              </div>
 
-            <div class="d-flex justify-content-center gap-2 mt-3 pb-4">
-              <p class="mb-0">¿No tienes una cuenta?</p>
-              <button type="button" id="register-button" class="btn btn-link">
-                Regístrate
-              </button>
+              <div
+                class="d-flex login-question flex-column align-items-center justify-content-center gap-2 mt-3 pb-4"
+              >
+                <p class="mb-0 roboto-serif">¿No tienes una cuenta?</p>
+                <a
+                  type="button"
+                  id="register-button"
+                  class="btn btn-link roboto-serif"
+                >
+                  Regístrate
+                </a>
+              </div>
+            </section>
+          </form>
+          <form id="signup-form">
+            <div class="tit">
+              <h1 class="mb-10 ms-3 text-center passion-one">Registrate</h1>
             </div>
+            <section class="sub-form mt-4 roboto-serif">
+              <div class="mb-2 px-4">
+                <label for="signup-name" class="form-label"
+                  >Nombre completo</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="signup-name"
+                  placeholder="Ingresa tu nombre completo"
+                  required
+                />
+              </div>
+              <div class="mb-2 px-4">
+                <label for="signup-dni" class="form-label"
+                  >Documento Nacional de Identidad</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="signup-dni"
+                  placeholder="Ingresa tu DNI"
+                  required
+                />
+              </div>
+              <div class="mb-2 px-4">
+                <label for="signup-email" class="form-label">Correo</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="signup-email"
+                  placeholder="correo@ejemplo.com"
+                />
+              </div>
+              <div class="mb-2 px-4">
+                <label for="signup-password" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signup-password"
+                  placeholder="Debe tener más de 6 caracteres"
+                />
+              </div>
+              <div class="d-flex justify-content-center mt-4 mb-4">
+                <button
+                  type="submit"
+                  class="btn-custom btn-login rounded-5 p-2 roboto-serif"
+                >
+                  Registrarse
+                </button>
+              </div>
+              <div
+                class="d-flex login-question flex-column align-items-center justify-content-center gap-2 mt-3 pb-4"
+              >
+                <p class="roboto-serif mb-0">¿Ya tienes una cuenta?</p>
+                <a href="./signin.html" class="btn-link roboto-serif"
+                  >Inicia Sesión</a
+                >
+              </div>
+            </section>
           </form>
         </div>
       </div>
     </div>
-
+    <script type="module" src="./assets/js/signin.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
