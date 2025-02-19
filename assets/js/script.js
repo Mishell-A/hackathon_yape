@@ -1,4 +1,3 @@
-import "./form.js";
 const btnBloqueo = document.querySelector(".btn-bloqueo");
 const modalOverlay = document.querySelector(".modal-overlay");
 const modalCustom = document.querySelector(".modal-custom");

@@ -89,13 +89,17 @@
           </div>
         </section>
 
-        <div
-          class="offcanvas offcanvas-start bg-dark"
-          id="menuLateral"
-          tabindex="-1"
-        >
-          <div class="offcanvas-header" data-bs-theme="dark">
-            <h4 class="text-white offcanvas-title text info">Menú</h4>
+        <div class="offcanvas offcanvas-start" id="menuLateral" tabindex="-1">
+          <div class="offcanvas-header">
+            <div class="d-flex align-items-center">
+              <img
+                src="./assets/img/yapito-006 (1).svg"
+                alt="logo-yape"
+                height="60px"
+                class="mx-3"
+              />
+              <h4 class="offcanvas-title mb-0 passion-one">Menú</h4>
+            </div>
             <button
               class="btn-close"
               type="button"
@@ -103,11 +107,36 @@
               data-bs-dismiss="offcanvas"
             ></button>
           </div>
-          <div class="offcanvas-body text-white">
-            <li>Y</li>
-            <li>A</li>
-            <li>P</li>
-            <li>E</li>
+          <div class="offcanvas-body">
+            <div class="menu-items">
+              <a href="#" class="menu-item">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Inicio</span>
+              </a>
+              <a href="#" class="menu-item">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Seguridad</span>
+              </a>
+              <a href="#" class="menu-item">
+                <i class="bi bi-person-fill"></i>
+                <span>Mi Cuenta</span>
+              </a>
+              <a href="#" class="menu-item">
+                <i class="bi bi-headset"></i>
+                <span>Soporte</span>
+              </a>
+              <a href="#" class="menu-item">
+                <i class="bi bi-question-circle-fill"></i>
+                <span>Ayuda</span>
+              </a>
+            </div>
+
+            <div class="menu-footer">
+              <button class="btn btn-bloqueo w-100">
+                <i class="bi bi-shield-lock me-2"></i>
+                Desbloquear tu cuenta
+              </button>
+            </div>
           </div>
         </div>
       </div>
