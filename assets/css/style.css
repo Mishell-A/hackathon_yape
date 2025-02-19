@@ -150,13 +150,16 @@ body {
   margin-bottom: 20px;
 }
 
-#carouselExampleCaptions {
+.carousel {
   width: 70%;
   height: 400px;
 }
+.carousel button {
+  width: 4%;
+}
 
 iframe {
-  height: 390px;
+  height: 380px;
 }
 
 footer {
@@ -238,7 +241,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.89);
   z-index: 1050;
 }
 
@@ -257,6 +260,7 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  width: 80%;
 }
 /* Overlay oscuro para mejorar la legibilidad del contenido */
 
@@ -275,9 +279,8 @@ footer {
 }
 
 .modal-image {
-  width: 120px;
   height: 120px;
-  margin: 0 auto 15px;
+  margin: 0 auto;
   object-fit: cover;
   border-radius: 60px;
 }
@@ -291,6 +294,7 @@ footer {
   margin-top: 30px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 .btn-action {
@@ -448,5 +452,29 @@ footer {
 
   .text-security {
     gap: 3;
+  }
+  .modal-image {
+    width: 90px;
+    margin-right: 0;
+  }
+  .iframe {
+    height: 100%;
+  }
+  .carousel {
+    width: 30%;
+    height: 60%;
+  }
+  .modal-custom {
+    width: 40%;
+  }
+  .modal-title {
+    font-size: 1.85rem;
+    margin-top: 9px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    margin-left: 0;
+    margin-right: 16px;
+    padding-right: 17px;
   }
 }
