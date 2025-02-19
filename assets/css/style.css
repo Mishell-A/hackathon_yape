@@ -457,12 +457,16 @@ footer {
     width: 90px;
     margin-right: 0;
   }
-  .iframe {
-    height: 100%;
+
+  iframe {
+    height: 500px;
   }
   .carousel {
-    width: 30%;
-    height: 60%;
+    width: 50%;
+    height: 520px;
+  }
+  .carousel button {
+    width: 4%;
   }
   .modal-custom {
     width: 40%;
