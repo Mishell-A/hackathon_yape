@@ -1,6 +1,3 @@
-import "./signup.js";
-import "./signin.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("register-button");
   const signup = document.getElementById("signup-form");

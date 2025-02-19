@@ -1,9 +1,8 @@
+import "./form.js";
 const btnBloqueo = document.querySelector(".btn-bloqueo");
 const modalOverlay = document.querySelector(".modal-overlay");
 const modalCustom = document.querySelector(".modal-custom");
 const closeModalButton = document.querySelector("#closeModal"); // Renamed variable
-const cancelModalButton = document.querySelector("#cancelModal"); // Renamed variable
-
 // Función para abrir el modal
 function openModal() {
   modalOverlay.classList.add("show");
@@ -19,7 +18,6 @@ function closeModal() {
 // Event listeners
 btnBloqueo.addEventListener("click", openModal);
 closeModalButton.addEventListener("click", closeModal);
-cancelModalButton.addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", closeModal);
 
 // Evitar que el click en el modal cierre la ventana

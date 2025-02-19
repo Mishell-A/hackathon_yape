@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yaprotec</title>
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/signin.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/container-circle-gradient-negative.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-lg navbar-light bg-white d-flex justify-content-between"
+    >
+      <div class="container-fluid">
+        <img
+          src="./assets/img/logo-positive.svg"
+          alt="logo-yape"
+          class="logo-yape"
+          height="50px"
+        />
+        <a class="btn" href="./index.html">
+          <i class="bi bi-arrow-left fs-3"></i>
+        </a>
+      </div>
+    </nav>
+    <div
+      class="d-flex justify-content-center align-items-center gradient cont-prin"
+    >
+      <div class="main-container">
+        <div class="contenedor bg-white" id="sign-in">
+          <form id="signin-form" class="roboto-serif">
+            <section class="cont-form">
+              <h1 class="mb-10 text-center passion-one">Inicia sesión</h1>
+              <section class="sub-form mt-4">
+                <div class="mb-2 px-4">
+                  <label for="signin-email" class="form-label roboto-serif"
+                    >Correo</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="signin-email"
+                    aria-describedby="emailHelp"
+                    placeholder="correo@ejemplo.com"
+                  />
+                </div>
+                <div class="mb-2 px-4">
+                  <label for="signin-password" class="form-label roboto-serif"
+                    >Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="signin-password"
+                    placeholder="Ingresa tu contraseña"
+                  />
+                </div>
+                <div class="d-flex justify-content-center mt-5 mb-5">
+                  <button
+                    type="submit"
+                    class="btn-custom rounded-5 p-2 roboto-serif btn-login"
+                  >
+                    Continuar
+                  </button>
+                </div>
+
+                <div
+                  class="d-flex login-question flex-column align-items-center justify-content-center gap-2 mt-3 pb-4"
+                >
+                  <p class="mb-0 roboto-serif">¿No tienes una cuenta?</p>
+                  <a
+                    type="button"
+                    id="register-button"
+                    class="btn btn-link roboto-serif"
+                  >
+                    Regístrate
+                  </a>
+                </div>
+              </section>
+            </section>
+          </form>
+          <section class="cont-form-register">
+            <form id="signup-form">
+              <div class="tit">
+                <h1 class="mb-10 text-center passion-one">Registrate</h1>
+              </div>
+              <section class="sub-form mt-4 roboto-serif">
+                <div class="mb-2 px-4">
+                  <label for="signup-name" class="form-label"
+                    >Nombre completo</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="signup-name"
+                    placeholder="Ingresa tu nombre completo"
+                    required
+                  />
+                </div>
+                <div class="mb-2 px-4">
+                  <label for="signup-dni" class="form-label"
+                    >Documento Nacional de Identidad</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="signup-dni"
+                    placeholder="Ingresa tu DNI"
+                    required
+                  />
+                </div>
+                <div class="mb-2 px-4">
+                  <label for="signup-email" class="form-label">Correo</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="signup-email"
+                    placeholder="correo@ejemplo.com"
+                  />
+                </div>
+                <div class="mb-2 px-4">
+                  <label for="signup-password" class="form-label"
+                    >Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="signup-password"
+                    placeholder="Debe tener más de 6 caracteres"
+                  />
+                </div>
+                <div class="d-flex justify-content-center mt-4 mb-4">
+                  <button
+                    type="submit"
+                    class="btn-custom btn-login rounded-5 p-2 roboto-serif"
+                  >
+                    Registrarse
+                  </button>
+                </div>
+                <div
+                  class="d-flex login-question flex-column align-items-center justify-content-center gap-2 mt-3 pb-4"
+                >
+                  <p class="roboto-serif mb-0">¿Ya tienes una cuenta?</p>
+                  <a href="./form.html" class="btn-link roboto-serif"
+                    >Inicia Sesión</a
+                  >
+                </div>
+              </section>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./assets/js/form.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
