@@ -34,7 +34,8 @@ input::placeholder {
   color: #69607b;
 }
 .contenedor h1,
-.main-container h1 {
+.main-container h1,
+.main-container-bloq h1 {
   color: #742384;
 }
 
@@ -122,7 +123,6 @@ input {
   border-color: rgb(189 119 199);
 }
 
-/* Estilos generales para el modal */
 .modal {
   display: none;
   position: fixed;
@@ -156,8 +156,6 @@ input {
 .close-btn:hover {
   color: #333;
 }
-
-/* Estilos generales para el modal */
 
 .btn-close {
   position: absolute;
@@ -240,6 +238,16 @@ input {
   bottom: 2%;
 }
 
+.main-container-bloq {
+  margin-top: 15%;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.main-container-bloq h1 {
+  color: #742384;
+}
+
 @media (min-width: 1200px) {
   .contenedor,
   .main-container {
@@ -252,7 +260,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%; /* O el tamaño que tenga */
+    height: 100%;
     width: 100%;
   }
   .cont-form {
@@ -266,9 +274,6 @@ input {
   .cont-prin {
     background: rgb(116 35 132);
   }
-  .contenedor h1 {
-    color: #742384;
-  }
 
   .login-question a,
   p {
@@ -276,5 +281,21 @@ input {
   }
   form {
     height: 100px;
+  }
+
+  .main-container-bloq {
+    margin-top: 8%;
+    border-radius: 30px;
+    padding: 20px;
+    width: 40%;
+  }
+  .main-container-bloq h1 {
+    padding-top: 20px;
+  }
+  .btn-validacion {
+    position: relative;
+    width: 50%;
+    bottom: 450%;
+    padding-top: 450px;
   }
 }
