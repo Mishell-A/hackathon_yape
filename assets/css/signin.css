@@ -77,8 +77,8 @@ input {
 }
 .main-container {
   min-height: 180px;
-  margin: 0 18px;
-  margin-top: 20%;
+  margin: 0px 18px;
+  margin-top: 0;
 }
 
 #cont-verifica {
@@ -244,9 +244,25 @@ input {
   .contenedor,
   .main-container {
     border-radius: 30px;
-    height: 31rem;
-    padding: 50px;
+    height: 600px;
+    padding: 20px;
   }
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* O el tamaño que tenga */
+    width: 100%;
+  }
+  .cont-form {
+    position: relative;
+    bottom: 150%;
+  }
+  #signup-form {
+    height: 30%;
+  }
+
   .cont-prin {
     background: rgb(116 35 132);
   }

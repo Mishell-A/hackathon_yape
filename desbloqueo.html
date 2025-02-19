@@ -50,7 +50,7 @@
     </nav>
 
     <main class="d-flex align-items-center gradient cont-prin flex-column">
-      <div class="main-container bg-white">
+      <div class="main-container-desbloq bg-white">
         <h1 class="mb-10 text-center passion-one">
           Desbloqueo de cuenta en línea
         </h1>
@@ -67,14 +67,14 @@
               class="icon-tit d-flex justify-content-center align-items-center"
             >
               <i class="bi bi-person-square mx-4 mb-2 icon-bloq"></i>
-              <section class="im-text">
+              <div class="im-text">
                 <h3>Reconocimiento facial</h3>
                 <p class="mb-0">
                   Deberás cargar una fotografía reciente y clara de tu rostro,
                   asegurándote de que la imagen esté bien iluminada para su
                   validación.
                 </p>
-              </section>
+              </div>
             </div>
           </button>
           <button
@@ -90,46 +90,48 @@
     <!-- Modal de Confirmación de Desbloqueo -->
 
     <div id="modal-desbloqueo" class="modal">
-      <div class="modal-content">
-        <button type="button" class="btn-close" id="closeModal"></button>
-        <h2 class="text-center">
-          ¿Estás seguro que deseas desbloquear tu cuenta Yape?
-        </h2>
-        <p class="text-center">
-          Al proceder con el desbloqueo de tu cuenta Yape, las siguientes
-          acciones ocurrirán:
-        </p>
-        <ol>
-          <li>
-            Recibirás un correo electrónico confirmando el desbloqueo de tu
-            cuenta.
-          </li>
-          <li>
-            Podrás acceder nuevamente a tu cuenta y realizar transacciones como
-            antes.
-          </li>
-          <li>
-            Si tienes algún saldo pendiente o bloqueado, podrás realizar
-            operaciones nuevamente.
-          </li>
-          <li>
-            En caso de que no puedas acceder, te daremos pasos para solucionar
-            cualquier inconveniente.
-          </li>
-        </ol>
-        <p>¿Deseas continuar con el proceso de desbloqueo?</p>
-        <div class="options-btn-validation">
-          <div class="option">
-            <input type="radio" id="si-btn" name="confirmacion" value="si" />
-            <label for="si-btn">Sí</label>
+      <div class="card-inicio-des">
+        <div class="modal-content">
+          <button type="button" class="btn-close" id="closeModal"></button>
+          <h2 class="text-center">
+            ¿Estás seguro que deseas desbloquear tu cuenta Yape?
+          </h2>
+          <p class="text-center">
+            Al proceder con el desbloqueo de tu cuenta Yape, las siguientes
+            acciones ocurrirán:
+          </p>
+          <ol>
+            <li>
+              Recibirás un correo electrónico confirmando el desbloqueo de tu
+              cuenta.
+            </li>
+            <li>
+              Podrás acceder nuevamente a tu cuenta y realizar transacciones
+              como antes.
+            </li>
+            <li>
+              Si tienes algún saldo pendiente o bloqueado, podrás realizar
+              operaciones nuevamente.
+            </li>
+            <li>
+              En caso de que no puedas acceder, te daremos pasos para solucionar
+              cualquier inconveniente.
+            </li>
+          </ol>
+          <p>¿Deseas continuar con el proceso de desbloqueo?</p>
+          <div class="options-btn-validation">
+            <div class="option">
+              <input type="radio" id="si-btn" name="confirmacion" value="si" />
+              <label for="si-btn">Sí</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="no-btn" name="confirmacion" value="no" />
+              <label for="no-btn">No</label>
+            </div>
           </div>
-          <div class="option">
-            <input type="radio" id="no-btn" name="confirmacion" value="no" />
-            <label for="no-btn">No</label>
+          <div class="modal-buttons">
+            <button id="btn-confirm" class="btn-confirm">Confirmar</button>
           </div>
-        </div>
-        <div class="modal-buttons">
-          <button id="btn-confirm" class="btn-confirm">Confirmar</button>
         </div>
       </div>
     </div>
