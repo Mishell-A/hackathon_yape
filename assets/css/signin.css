@@ -33,11 +33,13 @@ input::placeholder {
   font-size: 13px;
   color: #69607b;
 }
-.contenedor h1 {
+.contenedor h1,
+.main-container h1 {
   color: #742384;
 }
 
-.btn-custom {
+.btn-custom,
+.btn-validacion {
   background-color: #10cbb4;
   border: none;
   color: white;
@@ -73,9 +75,174 @@ input {
 .sub-form {
   height: 400px;
 }
+.main-container {
+  min-height: 180px;
+  margin: 0 18px;
+  margin-top: 20%;
+}
+
+#cont-verifica {
+  border-radius: 15px;
+  background-color: white;
+  border: 0 solid #b9b4c4;
+  box-shadow: 2px 2px 2px 1px rgba(41, 40, 40, 0.2);
+  text-decoration: none;
+  margin: 12px 16px;
+  padding: 5%;
+}
+
+#cont-verifica h3 {
+  color: #2c2044;
+  font-size: 14px;
+  font-weight: 650;
+}
+#cont-verifica p {
+  color: #69607b;
+  font-size: 12px;
+}
+.im-text {
+  text-align: left !important;
+}
+.icon-tit {
+  color: #10cbb4;
+}
+
+.icon-bloq {
+  font-size: 36px;
+}
+
+.button {
+  display: none;
+  position: absolute;
+  bottom: 9%;
+  width: 77%;
+}
+
+#cont-verifica.selected {
+  border-color: rgb(189 119 199);
+}
+
+/* Estilos generales para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #742384;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Estilos generales para el modal */
+
+.btn-close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  padding: 8px;
+  margin-bottom: 10%;
+  z-index: 2;
+  cursor: pointer;
+  background-color: #742384;
+}
+
+.modal-content h2 {
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.modal-content p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.options-btn-validation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.option input {
+  width: 20px;
+  height: 20px;
+}
+
+.option label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 8px 15px;
+  width: 82px;
+  border: none;
+  background-color: #742384;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.modal-buttons button:hover {
+  background-color: #9b2c8f;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.success-icon {
+  width: 80px;
+  height: auto;
+  animation: spin 2s infinite;
+}
+
+#btn-desbloq {
+  bottom: 2%;
+}
 
 @media (min-width: 1200px) {
-  .contenedor {
+  .contenedor,
+  .main-container {
     border-radius: 30px;
     height: 31rem;
     padding: 50px;

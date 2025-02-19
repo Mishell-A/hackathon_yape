@@ -31,7 +31,7 @@ body {
   box-shadow: 2px 2px 2px 1px rgba(41, 40, 40, 0.2);
   display: inline-block;
   animation: pulse 4s ease-in-out infinite;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @keyframes pulse {
@@ -60,7 +60,7 @@ body {
 
 .principal h2 {
   font-size: 50px;
-  padding-top: 10%;
+  padding-top: 8%;
 }
 
 .principal p {
@@ -308,7 +308,6 @@ footer {
 }
 
 .btn-register:active {
-  border: 2px solid black;
   color: white;
 }
 
@@ -316,7 +315,6 @@ footer {
   background: linear-gradient(130deg, #4b0082 11%, #00a896 95%);
   color: white;
   font-weight: 500;
-  transform: translateY(-2px);
 }
 
 .btn-login {
@@ -329,7 +327,6 @@ footer {
   background: linear-gradient(130deg, #4b0082 11%, #00a896 95%);
   color: white;
   font-weight: 500;
-  transform: translateY(-2px);
 }
 
 .modal-header {
@@ -375,7 +372,7 @@ footer {
   .principal h2 {
     font-size: 78px;
     padding: 0 45px;
-    padding-top: 5%;
+    padding-top: 3%;
     padding-bottom: 0;
     margin-bottom: 0;
   }
