@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cuando el usuario haga clic en la opción de verificación
   contVerifica.addEventListener("click", () => {
-    console.log("Botón de verificación clickeado"); // Asegúrate de que este log aparece
+    console.log("Botón de verificación clickeado");
     btnContinuar.style.display = "block";
     contVerifica.classList.add("selected");
   });

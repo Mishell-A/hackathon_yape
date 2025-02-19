@@ -98,14 +98,26 @@
   width: 100%;
   margin: 0 auto;
 }
+
 .main-container-desbloq {
-  margin-top: 20%;
+  margin-top: 15%;
+  border-radius: 30px;
 }
+
 .main-container-desbloq h1 {
   color: #742384;
 }
 
 @media screen and (min-width: 1200px) {
+  .main-container-desbloq {
+    margin-top: 8%;
+    border-radius: 30px;
+    padding: 20px;
+    width: 40%;
+  }
+  .main-container-desbloq h1 {
+    padding-top: 20px;
+  }
   .btn-validacion {
     position: relative;
     width: 50%;
@@ -118,9 +130,26 @@
   }
 
   .modal-content {
-    max-width: 800px;
     margin: 0 auto;
     padding: 30px;
+    width: 50%;
+    position: relative;
+  }
+
+  .lista-condiciones {
+    font-weight: 500;
+    color: #69607b;
+    padding-left: 3rem;
+  }
+  li {
+    padding: 5px;
+  }
+
+  .modal-content h2 {
+    padding-top: 15px;
+    font-weight: 500;
+    font-size: 24px;
+    color: #2c2044;
   }
 
   .close-btn {

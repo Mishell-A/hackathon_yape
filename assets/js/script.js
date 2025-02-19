@@ -15,7 +15,6 @@ function closeModal() {
   modalCustom.classList.remove("show");
 }
 
-// Event listeners
 btnBloqueo.addEventListener("click", openModal);
 closeModalButton.addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", closeModal);
