@@ -1,3 +1,8 @@
+// Usar la misma versión para todos los imports
+import {
+  onAuthStateChanged,
+  updateProfile,
+} from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { auth } from "./firebase.js";
 
@@ -7,37 +12,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const signin = document.getElementById("signin-form");
 
   signup.addEventListener("submit", async (e) => {
-    //Para que no se recargue la pagina
     e.preventDefault();
     console.log("Formulario enviado");
 
-    //Obtener los valores del formulario como objeto
     const name = signup["signup-name"].value;
     const email = signup["signup-email"].value;
     const password = signup["signup-password"].value;
-    // Manejar errores
+    const dni = signup[signup - dni].value;
+
     try {
-      //Crear las credenciasles
       const userCredentials = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
+        dni
       );
 
-      // Actualizar el perfil del usuario
       await updateProfile(auth.currentUser, {
         displayName: name,
       });
 
       showMessage("Usuario registrado", "success");
-      // Guardar el usuario en el localstorage
       localStorage.setItem("user", JSON.stringify(userCredentials.user));
-      //Redireccionar al home
       window.location.href = "./bloqueo.html";
-      //Limpiar el formulario
-      signupForm.reset();
+      signup.reset(); // Cambiado de signupForm a signup
     } catch (error) {
-      //Mensaje de error
       if (error.code === "auth/email-already-in-use") {
         showMessage("Correo ya registrado", "error");
       } else if (error.code === "auth/invalid-email") {
@@ -53,6 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  onAuthStateChanged(auth, async (user) => {
+    console.log(user);
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("email", JSON.stringify(user.email));
+      localStorage.setItem("dni", JSON.stringify(user.dni));
+    }
+  });
+
   const showSignupForm = () => {
     signup.style.display = "block";
     signin.style.display = "none";
