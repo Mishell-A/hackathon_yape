@@ -29,6 +29,11 @@
       href="./assets/img/container-circle-gradient-negative.svg"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
     <nav
@@ -107,7 +112,6 @@
 
         <div class="modal-buttons">
           <button id="btn-confirm" class="btn-confirm">Confirmar</button>
-          <button id="btn-cancel" class="btn-cancel">Cancelar</button>
         </div>
       </div>
     </div>
@@ -115,24 +119,24 @@
     <!-- Modal de Confirmación de Correo Enviado -->
     <div id="modal-confirmacion" class="modal">
       <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>¡Correo Enviado!</h2>
+        <div class="confirmation-icon">
+          <!-- Imagen animada que representa el correo enviado -->
+          <img src="" alt="Correo Enviado" class="success-icon" />
+          <h2>¡Correo Enviado!</h2>
+        </div>
         <p>
           Hemos enviado un correo a tu dirección registrada. Por favor, haz clic
           en el enlace para confirmar el bloqueo de tu cuenta.
         </p>
-
-        <div class="confirmation-icon">
-          <!-- Imagen animada que representa el correo enviado -->
-          <img src="" alt="Correo Enviado" class="success-icon" />
-        </div>
-
         <div class="modal-buttons">
-          <button id="btn-close" class="btn-close">Cerrar</button>
+          <button id="btn-cancel">Cerrar</button>
         </div>
       </div>
     </div>
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script type="module" src="./assets/js/bloqueo.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

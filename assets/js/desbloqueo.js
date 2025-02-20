@@ -1,3 +1,4 @@
+import {} from "./form.js";
 document.addEventListener("DOMContentLoaded", () => {
   const contVerifica = document.getElementById("cont-verifica");
   const btnContinuar = document.getElementById("btn-desbloq");
