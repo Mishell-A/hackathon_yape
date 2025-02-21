@@ -1,7 +1,6 @@
 body {
-  background-color: white;
   margin: 0;
-  padding: 0;
+  background-color: white;
 }
 
 .navbar-info {
@@ -10,7 +9,14 @@ body {
   left: 0;
   width: 100%;
   height: 80px;
-  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.part-1 {
+  background-color: rgba(207, 203, 203, 0.363);
+  color: white;
+  width: 70%;
+  font-size: 12px;
 }
 .btn-reporte {
   font-size: 12px;
@@ -32,6 +38,7 @@ main {
 .container h1 {
   color: #4b0082;
   font-size: 26.8px;
+  font-weight: 800;
 }
 
 .container p {
@@ -46,4 +53,155 @@ main {
   color: #69607b;
   line-height: 1.6;
   padding-left: 10px;
+}
+footer {
+  background: linear-gradient(13deg, #00a896 51%, #2c3e50 85%);
+  padding-top: 20px;
+  bottom: 0;
+  height: 70%;
+}
+
+.part-1 i {
+  font-size: 15px;
+}
+
+.part-1:hover {
+  background-color: rgba(217, 217, 217, 0.7);
+}
+
+.iconsfooter i {
+  color: white;
+  font-size: 20px;
+}
+
+.part-3 {
+  margin-top: 15px;
+  color: white;
+}
+
+.part-3 .bi-book {
+  font-size: 50px;
+}
+.part-3 p {
+  font-size: 8px;
+  color: rgba(217, 217, 217, 0.7);
+}
+
+.link-footer {
+  display: block;
+  color: white;
+  font-size: 11px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.final-description {
+  color: rgba(217, 217, 217, 0.7);
+  font-size: 12px;
+  margin-top: 8px;
+  margin: 0;
+  padding: 20px;
+}
+
+.my-5 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.offcanvas {
+  background: linear-gradient(10deg, #7423ad 31%, #519e95 85%);
+}
+
+.offcanvas-header {
+  padding: 1.5rem;
+  background-color: white;
+  border-bottom: 3px solid #10cbb4;
+}
+
+.offcanvas-title {
+  color: #4b0082;
+  font-size: 1.7rem;
+}
+
+.menu-items {
+  padding: 1.5rem 1rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-family: "Roboto Serif", serif;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.596);
+  color: #10cbb4;
+  transform: translateX(5px);
+}
+
+.menu-item i {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+.menu-item span {
+  font-size: 1rem;
+}
+
+.menu-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.menu-footer .btn-bloqueo {
+  background-color: #10cbb4;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-footer .btn-bloqueo:hover {
+  background-color: #0fb4a0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas .btn-close {
+  background-color: #702f9e;
+  opacity: 1;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.offcanvas .btn-close:hover {
+  background-color: #10cbb4;
+}
+
+@media (min-width: 1200px) {
+  .card {
+    height: 80%;
+  }
+  main {
+    padding-top: 0px;
+    margin-top: 10px; /* Añadir espacio para que no se tapen con el navbar fijo */
+  }
+  .hidden {
+    display: none;
+  }
+  .container h1,
+  .container p {
+    margin-bottom: 10px;
+  }
 }
