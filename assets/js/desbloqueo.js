@@ -1,17 +1,31 @@
-import {} from "./form.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { auth } from "./firebase.js";
+import { showMessage } from "./toastMessage.js";
 document.addEventListener("DOMContentLoaded", () => {
   const contVerifica = document.getElementById("cont-verifica");
   const btnContinuar = document.getElementById("btn-desbloq");
   const modalDesbloqueo = document.getElementById("modal-desbloqueo");
   const modalSubirImagen = document.getElementById("modal-subir-imagen");
   const modalCoincidencia = document.getElementById("modal-coincidencia");
+  const modalDNI = document.getElementById("modal-dni");
   const closeModalDesbloqueo = document.getElementById("closeModal");
   const closeModalImagen = document.getElementById("closeModalImagen");
-  const closeModalCoincidencia = document.getElementById("btn-cerrar");
+  const closeModalCoincidencia = document.getElementById("btn-cancel");
   const btnConfirmDesbloqueo = document.getElementById("btn-confirm");
+  const modalOverlay = document.querySelector(".modal-overlay");
+  const closeModalDNI = document.getElementById("closeModalDNI");
+  const btnValidarDNI = document.getElementById("btn-validar-dni");
+  const inputCodeDNI = document.getElementById("dni-security-code");
+  const inputNumberDNI = document.getElementById("dni-number");
 
   const siBtn = document.getElementById("si-btn");
   const noBtn = document.getElementById("no-btn");
+
+  modalDesbloqueo.style.display = "none";
+  modalDNI.style.display = "none";
+
+  const dniVerificador = 9;
+  const numeroDni = 12345678;
 
   // Mostrar el botón de continuar cuando el usuario hace clic en el contenedor de verificación
   contVerifica.addEventListener("click", () => {
@@ -22,40 +36,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mostrar el modal de desbloqueo cuando el usuario hace clic en "Continuar"
   btnContinuar.addEventListener("click", () => {
-    modalDesbloqueo.style.display = "block"; // Muestra el modal de desbloqueo
-    modalSubirImagen.style.display = "none"; // Asegúrate de ocultar el modal de imagen
+    modalDesbloqueo.style.display = "flex"; // Cambiar a 'flex' para que el modal sea visible
+    modalOverlay.classList.add("show");
   });
 
   // Cuando el usuario confirma el desbloqueo, se oculta el modal de desbloqueo y se muestra el modal de subir imagen
   btnConfirmDesbloqueo.addEventListener("click", () => {
+    if (!siBtn.checked && !noBtn.checked) {
+      showMessage("Debes seleccionar una opción", "warning");
+      return;
+    }
     if (siBtn.checked) {
       modalDesbloqueo.style.display = "none";
-      modalSubirImagen.style.display = "block";
+      modalDNI.style.display = "flex"; // Muestra el modal de DNI
     } else if (noBtn.checked) {
       // Resetear todo al estado inicial
       modalDesbloqueo.style.display = "none";
-      btnContinuar.style.display = "none";
+      modalOverlay.classList.remove("show");
       contVerifica.classList.remove("selected");
-
       // Limpiar los radio buttons
       siBtn.checked = false;
       noBtn.checked = false;
     }
   });
 
-  // Cerrar el modal de desbloqueo cuando se haga clic en la "X"
-  closeModalDesbloqueo.addEventListener("click", () => {
-    modalDesbloqueo.style.display = "none";
-  });
+  btnValidarDNI.addEventListener("click", () => {
+    const dniCode = inputCodeDNI.value.trim();
+    const dniNumber = inputNumberDNI.value.trim();
+    if (
+      dniCode !== dniVerificador.toString() ||
+      dniNumber !== numeroDni.toString()
+    ) {
+      showMessage("Datos incorrectos", "error");
+      return;
+    }
 
-  // Cerrar el modal de subir imagen cuando se haga clic en la "X"
-  closeModalImagen.addEventListener("click", () => {
-    modalSubirImagen.style.display = "none";
-  });
-
-  // Cerrar el modal de coincidencia cuando se haga clic en la "X"
-  closeModalCoincidencia.addEventListener("click", () => {
-    modalCoincidencia.style.display = "none";
+    // Si el código de seguridad es correcto, pasar al siguiente paso
+    modalDNI.style.display = "none"; // Ocultar modal de DNI
+    modalSubirImagen.style.display = "block"; // Mostrar modal de reconocimiento facial
   });
 
   // Simulación de subida de imagen
@@ -93,4 +111,57 @@ document.addEventListener("DOMContentLoaded", () => {
         reader.readAsDataURL(file); // Lee el archivo de imagen como URL
       }
     });
+
+  // Cerrar el modal de desbloqueo cuando se haga clic en la "X"
+  closeModalDesbloqueo.addEventListener("click", () => {
+    modalDesbloqueo.style.display = "none";
+    modalOverlay.classList.remove("show");
+    siBtn.checked = false;
+    noBtn.checked = false;
+  });
+
+  closeModalDNI.addEventListener("click", () => {
+    modalDNI.style.display = "none";
+    modalOverlay.classList.remove("show");
+  });
+
+  // Cerrar el modal de subir imagen
+  closeModalImagen.addEventListener("click", () => {
+    modalSubirImagen.style.display = "none";
+    modalOverlay.classList.remove("show");
+  });
+
+  // Cerrar el modal de coincidencia
+  closeModalCoincidencia.addEventListener("click", () => {
+    modalCoincidencia.style.display = "none";
+    modalOverlay.classList.remove("show");
+  });
+
+  closeModalCoincidencia.addEventListener("click", () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Sesión cerrada exitosamente");
+        window.location.href = "./index.html"; // Redirigir al inicio después de cerrar sesión
+        // Prevenir que el usuario se quede en la página usando la tecla ESC
+        window.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            modalConfirmacion.style.display === "flex"
+          ) {
+            e.preventDefault();
+            showMessage(
+              "Debes usar el botón de cerrar para continuar",
+              "warning"
+            );
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Error al cerrar sesión:", error);
+        showMessage("Error al cerrar sesión", "error");
+      });
+
+    modalCoincidencia.style.display = "none";
+    modalOverlay.classList.remove("show");
+  });
 });
