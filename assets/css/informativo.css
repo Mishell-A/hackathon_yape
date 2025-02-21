@@ -204,4 +204,8 @@ footer {
   .container p {
     margin-bottom: 10px;
   }
+  .container h1{
+    font-size: 42px;
+  }
+
 }
