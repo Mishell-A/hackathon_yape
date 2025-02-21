@@ -1,4 +1,7 @@
-import { sendEmailVerification } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import {
+  sendEmailVerification,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { auth } from "./firebase.js";
 import { showMessage } from "./toastMessage.js";
 import {} from "./form.js";
@@ -10,8 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalConfirmacion = document.getElementById("modal-confirmacion");
   const closeModalBtn = document.getElementById("closeModal");
   const btnConfirmBloqueo = document.getElementById("btn-confirm");
+  const closeModalCoincidencia = document.getElementById("btn-cancel");
+  const modalOverlay = document.querySelector(".modal-overlay");
   const siBtn = document.getElementById("si-btn");
   const noBtn = document.getElementById("no-btn");
+
+  // Ocultar el modal de bloqueo al inicio
+  modalBloqueo.style.display = "none";
 
   // Función para enviar email de confirmación
   const sendVerificationEmail = async () => {
@@ -53,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       showMessage("Debes iniciar sesión primero", "error");
       return;
     }
-    modalBloqueo.style.display = "flex";
+    modalBloqueo.style.display = "flex"; // Cambiar a 'flex' para que el modal sea visible
+    modalOverlay.classList.add("show");
   });
 
   // Manejar la confirmación en el modal de bloqueo
@@ -65,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (noBtn.checked) {
       modalBloqueo.style.display = "none";
+      modalOverlay.classList.remove("show");
       return;
     }
 
@@ -75,22 +85,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cerrar botón en modal de bloqueo
   closeModalBtn.addEventListener("click", () => {
-    modalBloqueo.style.display = "none";
     // Limpiar selección de radio buttons
+    modalBloqueo.style.display = "none";
+    modalOverlay.classList.remove("show");
     siBtn.checked = false;
     noBtn.checked = false;
   });
 
-  // Botón de cerrar en modal de confirmación (redirige a inicio)
-  document.getElementById("btn-cancel").addEventListener("click", () => {
-    window.location.href = "./index.html";
-  });
+  closeModalCoincidencia.addEventListener("click", () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Sesión cerrada exitosamente");
+        window.location.href = "./index.html"; // Redirigir al inicio después de cerrar sesión
+        // Prevenir que el usuario se quede en la página usando la tecla ESC
+        window.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            modalConfirmacion.style.display === "flex"
+          ) {
+            e.preventDefault();
+            showMessage(
+              "Debes usar el botón de cerrar para continuar",
+              "warning"
+            );
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Error al cerrar sesión:", error);
+        showMessage("Error al cerrar sesión", "error");
+      });
 
-  // Prevenir que el usuario se quede en la página usando la tecla ESC
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalConfirmacion.style.display === "flex") {
-      e.preventDefault();
-      showMessage("Debes usar el botón de cerrar para continuar", "warning");
-    }
+    modalCoincidencia.style.display = "none";
+    modalOverlay.classList.remove("show");
   });
 });

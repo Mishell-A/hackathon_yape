@@ -48,6 +48,19 @@ input::placeholder {
   width: 85%;
 }
 
+.btn-confirm,
+.btn-cancel,
+.btn-close {
+  padding: 10px 20px;
+  background-color: #10cbb4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+}
+
 .btn-link {
   text-decoration: none;
   color: #10cbb4;
@@ -131,9 +144,72 @@ input {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+}
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.979);
+  z-index: 1050;
+}
+#modal-bloqueo,
+#modal-desbloqueo {
+  display: none;
+  position: fixed;
+  top: 10%; /* Se inicia más arriba */
+  left: 50%;
+  transform: translateX(-50%); /* Solo se mueve horizontalmente */
+  z-index: 1060;
+  width: 90%;
+  max-width: 400px; /* Limita el ancho */
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+  height: auto; /* Se expande naturalmente */
+  max-height: 80vh; /* Evita que sea demasiado grande */
+  overflow-y: auto; /* Permite scroll solo si es necesario */
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido se apile correctamente */
+}
+
+#modal-bloqueo h3,
+#modal-desbloqueo h3 {
+  padding: 50px 0px 20px;
+  font-size: 26.8px;
+  font-weight: 800;
+}
+
+#modal-bloqueo p,
+#modal-desbloqueo p {
+  font-size: 11px;
+}
+
+#modal-bloqueo label,
+#modal-desbloqueo label {
+  font-size: 13px;
+}
+#modal-bloqueo #si-btn {
+  margin-left: 10px;
+}
+
+#modal-bloqueo li,
+#modal-desbloqueo li {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+#modal-subir-imagen,
+#modal-coincidencia,
+#modal-confirmacion,
+#modal-dni {
+  z-index: 1060;
 }
 
 .modal-content {
@@ -142,6 +218,15 @@ input {
   border-radius: 10px;
   width: 300px;
   position: relative;
+}
+
+#modal-bloqueo.show,
+#modal-desbloqueo.show {
+  display: block;
+}
+
+.modal-overlay.show {
+  display: block !important;
 }
 
 .close-btn {
@@ -169,13 +254,16 @@ input {
 }
 
 .modal-content h2 {
-  font-size: 18px;
-  margin-top: 30px;
+  margin-bottom: 45px;
+  padding-top: 15px;
+  font-weight: bolder;
+  font-size: 22px;
+  color: #2c2044;
 }
 
 .modal-content p {
-  font-size: 13px;
-  margin-bottom: 20px;
+  font-size: 11px;
+  margin-bottom: 12px;
 }
 
 .options-btn-validation {
@@ -204,12 +292,14 @@ input {
 }
 
 .modal-buttons {
-  margin-top: 20px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-buttons button {
   padding: 8px 15px;
-  width: 82px;
   border: none;
   background-color: #742384;
   color: white;
@@ -246,6 +336,21 @@ input {
 
 .main-container-bloq h1 {
   color: #742384;
+}
+
+.success-icon {
+  animation: spin 5s infinite;
+  width: 30px;
+  height: 40px;
+}
+
+.modal-content h1 {
+  margin-top: 30px;
+  margin-bottom: 35px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bolder;
+  color: #2c2044;
 }
 
 @media (min-width: 1200px) {
@@ -297,5 +402,21 @@ input {
     width: 50%;
     bottom: 450%;
     padding-top: 450px;
+  }
+  .modal-buttons button {
+    height: 60px;
+    width: 100px;
+  }
+  .modal-content h1 {
+    margin-top: 45px;
+    margin-bottom: 30px;
+    font-size: 26.8px;
+    text-align: center;
+    font-weight: bolder;
+    color: #2c2044;
+  }
+  .modal-content p {
+    font-size: 13px;
+    margin-bottom: 12px;
   }
 }

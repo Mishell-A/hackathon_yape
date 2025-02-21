@@ -23,7 +23,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/css/signin.css" />
+
     <link
       rel="shortcut icon"
       href="./assets/img/container-circle-gradient-negative.svg"
@@ -34,6 +34,8 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/signin.css" />
+    <link rel="stylesheet" href="./assets/css/desbloqueo.css" />
   </head>
   <body>
     <nav
@@ -79,7 +81,6 @@
                 </section>
               </div>
             </button>
-
             <button
               class="button btn-bloq btn-validacion rounded-5 p-2 roboto-serif mt-4 mb-5"
               id="btn-validacion-bloq"
@@ -91,48 +92,85 @@
       </div>
     </main>
     <!-- Modal de Confirmación de Bloqueo -->
-    <div id="modal-bloqueo" class="modal">
-      <div class="modal-content">
-        <button type="button" class="btn-close" id="closeModal"></button>
-        <h2>¿Estás seguro que deseas bloquear tu cuenta?</h2>
-        <p>
-          Una vez bloqueada, tu cuenta de Yape no podrá ser utilizada
-          temporalmente. ¿Deseas continuar?
-        </p>
-        <div class="options-btn-validation">
-          <div class="option">
-            <input type="radio" id="si-btn" name="confirmacion" value="si" />
-            <label for="si-btn">Sí</label>
-          </div>
-          <div class="option">
-            <input type="radio" id="no-btn" name="confirmacion" value="no" />
-            <label for="no-btn">No</label>
-          </div>
-        </div>
+    <section>
+      <div class="modal-overlay"></div>
 
-        <div class="modal-buttons">
-          <button id="btn-confirm" class="btn-confirm">Confirmar</button>
+      <!-- Modal -->
+      <div class="modal-content-bloq" id="modal-bloqueo">
+        <button type="button" class="btn-close" id="closeModal"></button>
+        <div class="modal-content-wrapper">
+          <h3 class="text-center roboto-serif roboto-serif">
+            ¿Estás seguro que deseas bloquear tu cuenta?
+          </h3>
+          <p class="text-center roboto-serif">
+            Si decides continuar con el bloqueo, tu cuenta de Yape quedará
+            inactiva temporalmente y se aplicarán las siguientes restricciones:
+          </p>
+          <ol class="lista-condiciones roboto-serif">
+            <li>No podrás enviar ni recibir pagos a través de Yape.</li>
+            <li>
+              Tu saldo permanecerá seguro, pero no podrás acceder a él desde la
+              app.
+            </li>
+            <li>
+              No podrás iniciar sesión en Yape hasta que solicites el
+              desbloqueo.
+            </li>
+            <li>
+              Para reactivar tu cuenta, deberás comunicarte con el servicio de
+              atención al cliente.
+            </li>
+          </ol>
+          <p class="roboto-serif">
+            ¿Deseas continuar con el bloqueo de tu cuenta?
+          </p>
+
+          <div class="options-btn-validation">
+            <div class="option">
+              <input type="radio" id="si-btn" name="confirmacion" value="si" />
+              <label for="si-btn" class="roboto-serif"
+                >Sí, bloquear cuenta</label
+              >
+            </div>
+            <div class="option">
+              <input type="radio" id="no-btn" name="confirmacion" value="no" />
+              <label for="no-btn" class="roboto-serif">No, cancelar</label>
+            </div>
+          </div>
+          <div class="modal-buttons">
+            <button id="btn-confirm" class="btn-confirm roboto-serif">
+              Confirmar
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Modal de Confirmación de Correo Enviado -->
     <div id="modal-confirmacion" class="modal">
       <div class="modal-content">
-        <div class="confirmation-icon">
+        <div
+          class="confirmation-tit-modal d-flex justify-content-center align-items-center"
+        >
           <!-- Imagen animada que representa el correo enviado -->
-          <img src="" alt="Correo Enviado" class="success-icon" />
-          <h2>¡Correo Enviado!</h2>
+          <img
+            src="https://media2.giphy.com/media/BxaUIM0sHZUlmLUk3I/200w.gif?cid=6c09b95228kcnnpsdombqnc4gfpcanz86id7wlnko12p716u&ep=v1_stickers_search&rid=200w.gif&ct=s"
+            alt="Correo Enviado"
+            class="success-icon"
+            id="tit-confirm"
+          />
+          <h2 class="roboto-serif">¡Correo Enviado!</h2>
         </div>
-        <p>
+        <p class="roboto-serif text-center">
           Hemos enviado un correo a tu dirección registrada. Por favor, haz clic
           en el enlace para confirmar el bloqueo de tu cuenta.
         </p>
-        <div class="modal-buttons">
-          <button id="btn-cancel">Cerrar</button>
+        <div class="modal-buttons roboto-serif">
+          <button id="btn-cancel" class="btn-confirm">Cerrar</button>
         </div>
       </div>
     </div>
+
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
