@@ -33,6 +33,10 @@ body {
   animation: pulse 4s ease-in-out infinite;
   font-size: 14px;
 }
+.btn-bloqueo:hover {
+  background-color: #8941bd;
+  color: white;
+}
 
 @keyframes pulse {
   0% {
