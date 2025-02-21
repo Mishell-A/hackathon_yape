@@ -5,8 +5,8 @@ export const showMessage = (mensaje, type) => {
     destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
     gravity: "top", // Se muestra en la parte superior
-    position: "right",
-    stopOnFocus: true,
+    position: "right", // Se alinea a la derecha
+    stopOnFocus: true, // Previene que se cierre al hacer hover
     style: {
       background:
         type === "error"
@@ -20,7 +20,9 @@ export const showMessage = (mensaje, type) => {
       right: "20px", // Se coloca 20px desde la parte derecha
       zIndex: 9999, // Aseguramos que esté por encima de otros elementos
       borderRadius: "5px", // Bordes redondeados
-      padding: "10px 20px", // Espaciado interno para hacer más visible el texto
+      padding: "10px 15px", // Ajuste automático del padding horizontal según el texto
+      maxWidth: "300px", // Limitar el ancho máximo del toast
+      wordWrap: "break-word", // Para que el texto se ajuste al ancho y no se desborde
     },
     onClick: function () {}, // Callback después de hacer clic
   }).showToast();
